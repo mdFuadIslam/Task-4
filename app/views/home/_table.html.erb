@@ -1,0 +1,33 @@
+<%= form_tag(submited_choice_path, method: :post) do %>
+  <%= submit_tag 'Block', name: 'block' %>
+  <%= submit_tag 'Delete', name: 'delete' %>
+  <%= submit_tag 'Unblock', name: 'unblock' %>
+
+
+<table>
+  <thead>
+    <tr>
+      <th><%= check_box_tag 'user_ids[]' %></th>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Last Login Time</th>
+      <th>Registration Time</th>
+      <th>Status</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @users.each do |user| %>
+      <tr>
+        <td><%= check_box_tag 'user_ids[]', user.id %></td>
+        <td><%= user.id %></td>
+        <td><%= user.name %></td>
+        <td><%= user.email %></td>
+        <td><%= user.current_sign_in_at %></td>
+        <td><%= user.created_at %></td>
+        <td><%= user.status %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<% end %>

@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+  devise_for :users, controllers: { sessions: 'users/sessions' }
+  root to: 'home#index'
+
+  get 'home/index'
+  post 'submited/choice', to: 'home#manage'
+
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
