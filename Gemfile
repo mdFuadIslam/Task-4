@@ -55,3 +55,9 @@ group :test do
   gem "capybara"
   gem "selenium-webdriver"
 end
+
+gem 'bootstrap'
+gem 'jquery-rails'
+gem 'leaflet-rails'
+
+gem 'sassc-rails'

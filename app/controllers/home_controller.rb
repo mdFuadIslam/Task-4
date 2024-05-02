@@ -13,6 +13,6 @@ class HomeController < ApplicationController
     elsif params[:unblock]
       User.unscoped.where(id: selected_user_ids).update_all(status: "active")
     end
-    redirect_to root_path
+    redirect_to home_index_path
   end
 end

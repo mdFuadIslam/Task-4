@@ -7,11 +7,68 @@
     <%= csp_meta_tag %>
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+    
+    <style>
+      .table-users {
+        padding: 0 15px;
+      }
+     .dropdown-toggle::after {
+        border-top-color: #ffffff;
+      }
+            .table-users {
+        border-collapse: collapse;
+        width: 100%;
+      }
+
+      .table-users th,
+      .table-users td {
+        border: 1px solid #ddd;
+        padding: 8px;
+        text-align: left;
+      }
+
+      .table-users th {
+        background-color: #f2f2f2;
+        font-weight: bold;
+      }
+
+      .table-users tr:nth-child(even) {
+        background-color: #f2f2f2;
+      }
+
+      .table-users input[type=checkbox] {
+        margin-right: 8px;
+      }
+
+      .table-users #selectAll {
+        margin-right: 16px;
+      }
+      .container-md {
+        padding: 0 20%;
+      }
+    </style>
+
   </head>
 
   <body>
+  <header class="p-3 bg-dark text-white">
+    <div class="container">
+      <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+        <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
+          <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap"><use xlink:href="#bootstrap"></use></svg>
+        </a>
+
+        <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+          <li><h2>Task - 4</h2></li>
+        </ul>
+        <%= render 'header_buttons' %>
+      </div>
+    </div>
+  </header>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
     <%= yield %>
-  </body>
+    </body>
 </html>
