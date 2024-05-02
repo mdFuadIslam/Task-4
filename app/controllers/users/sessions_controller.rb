@@ -2,15 +2,13 @@
 
 class Users::SessionsController < Devise::SessionsController
   def create
-    self.resource = warden.authenticate(auth_options)
-    if resource.status == "blocked"
-      flash[:alert] = "Your account is blocked."
-      redirect_to new_user_session_path
-    elsif resource && resource.active_for_authentication? && resource.status == 'active'
-      sign_in(resource_name, resource)
-      yield resource if block_given?
-      respond_with resource, location: after_sign_in_path_for(resource)
+    email = params[:user] && params[:user][:email].downcase
+    @user = email.present? ? User.find_by(email: email) : nil
+    if @user && @user.status == "blocked"
+      set_flash_message!(:alert, :"devise.failure.blocked")
+      redirect_to new_user_session_path and return
     end
+    super
   end
   # before_action :configure_sign_in_params, only: [:create]
 

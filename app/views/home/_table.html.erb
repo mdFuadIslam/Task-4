@@ -7,7 +7,7 @@
 <table>
   <thead>
     <tr>
-      <th><%= check_box_tag 'user_ids[]' %></th>
+      <th><%= check_box_tag 'select_all', nil, false, id: 'selectAll' %></th>
       <th>ID</th>
       <th>Name</th>
       <th>Email</th>
@@ -19,7 +19,7 @@
   <tbody>
     <% @users.each do |user| %>
       <tr>
-        <td><%= check_box_tag 'user_ids[]', user.id %></td>
+        <td><%= check_box_tag 'user_ids[]', user.id, false, class: 'input[type=checkbox]' %></td>
         <td><%= user.id %></td>
         <td><%= user.name %></td>
         <td><%= user.email %></td>
@@ -31,3 +31,16 @@
   </tbody>
 </table>
 <% end %>
+<script>
+$("#selectAll").click(function() {
+  $("input[type=checkbox]").prop("checked", $(this).prop("checked"));
+});
+
+$("input[type=checkbox]").click(function() {
+  if (!$(this).prop("checked")) {
+    $("#selectAll").prop("checked", false);
+  }
+});
+
+jackHarnerSig();
+</script>
