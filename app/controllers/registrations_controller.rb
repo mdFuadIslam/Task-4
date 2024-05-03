@@ -12,7 +12,7 @@ class RegistrationsController < Devise::RegistrationsController
     end
 
     # Add custom validation for email
-    if resource.email =~ /^\d+|[^a-zA-Z0-9@.]|(@.+)\z/
+    if resource.email =~ /^\d+|[^a-zA-Z0-9@.]/
       resource.errors.add(:Email, "is invalid.")
       clean_up_passwords resource
       set_minimum_password_length
