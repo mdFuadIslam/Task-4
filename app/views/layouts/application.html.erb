@@ -8,8 +8,6 @@
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    
-    
     <style>
       .table-users {
         padding: 0 15px;
@@ -48,8 +46,50 @@
       .container-md {
         padding: 0 20%;
       }
-    </style>
+      .alert {
+        padding: 20px;
+        background-color: #f44336;
+        color: white;
+        opacity: 1;
+        transition: opacity 0.6s;
+        margin-bottom: 15px;
+      }
 
+      .alert.success {background-color: #04AA6D;}
+      .alert.info {background-color: #2196F3;}
+      .alert.warning {background-color: #ff9800;}
+
+      .closebtn {
+        margin-left: 15px;
+        color: white;
+        font-weight: bold;
+        float: right;
+        font-size: 22px;
+        line-height: 20px;
+        cursor: pointer;
+        transition: 0.3s;
+      }
+
+      .closebtn:hover {
+        color: black;
+      }
+      .flex-container {
+        display: flex;
+        flex-wrap: wrap;
+        align-content: center;
+        justify-content: center;
+        height: 200px;
+        border: 1px solid black;
+      }
+
+      .flex-item {
+        flex: 1 0 200px;
+        margin: 10px;
+        background-color: lightgray;
+        text-align: center;
+        line-height: 200px;
+      }
+    </style>
   </head>
 
   <body>
@@ -67,8 +107,19 @@
       </div>
     </div>
   </header>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+    <% if notice %>
+        <div class="alert success">
+          <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>  
+          <%= notice %>
+        </div>
+    <% end %>
+    <% if alert %>
+      <div class="alert">
+        <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+        <%= alert %>
+      </div>
+    <% end %>
+    <div style="margin-bottom: 20px;"></div>
     <%= yield %>
     </body>
 </html>

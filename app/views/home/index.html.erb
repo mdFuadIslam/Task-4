@@ -1,5 +1,9 @@
 <% if user_signed_in? %>  
   <%= render "home/table" %>
 <% else %>
-  <%= button_to "Sign in", new_user_session_path %> 
+<div class = "flex-container">
+  <div class="d-grid">
+    <%= button_to "Log In", new_user_session_path, class: "btn btn-lg btn-primary"  %> 
+  </div>
+</div>
 <% end %>

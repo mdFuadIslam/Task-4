@@ -13,6 +13,8 @@ class HomeController < ApplicationController
     elsif params[:unblock]
       User.unscoped.where(id: selected_user_ids).update_all(status: "active")
     end
+
+    flash[:notice] = "Action was successful!"
     redirect_to home_index_path
   end
 end

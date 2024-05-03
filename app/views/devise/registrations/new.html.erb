@@ -1,10 +1,20 @@
 <div class="container-md">
   <h2 class = "text-center">Sign up</h2>
   <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-    <div class = "text-center">
-      <%= render "devise/shared/error_messages", resource: resource %>
+    <% if resource.errors.any? %>
+    <div class="alert">
+        <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+          <%= render "devise/shared/error_messages", resource: resource %>
     </div>
 
+    <div class="form-floating">
+      <%= f.text_field :name, class: "form-control", placeholder: "Name", id: "floatingInput" %>
+    </div>
+
+    <div class="form-floating">
+      <%= f.email_field :email, class: "form-control", placeholder: "name@example.com", id: "floatingInput" %>
+    </div>
+    <% else %>
     <div class="form-floating">
       <%= f.text_field :name, class: "form-control", placeholder: "Name", id: "floatingInput" %>
       <label for="floatingInput">Name</label>
@@ -14,6 +24,7 @@
       <%= f.email_field :email, class: "form-control", placeholder: "name@example.com", id: "floatingInput" %>
       <label for="floatingInput">Email address</label>
     </div>
+    <% end %>
 
     <div class="form-floating">
       <%= f.password_field :password, class: "form-control", placeholder: "Password", id: "floatingInput" %>
