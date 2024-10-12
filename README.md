@@ -1,7 +1,26 @@
-# README
+# Task-4 (User Management System)
 
-Depoly: https://task-4-jcel.onrender.com
+Welcome to Task-4, a user management system.
 
-Demo: https://youtu.be/g77tmuVVj-8
+## Demonstration
 
-* ...
+[https://youtu.be/5NW5ZNz_nQA]
+
+## Live Deployment
+
+The project is deployed on Render. You can access the live site at:
+
+[https://task-4-jcel.onrender.com]
+
+## Key Features
+
+- **Register:** Register new user.
+- **Login:** Login with valid credentials.
+- **Admin Panel:** Use system to block, delete and unblock users.
+
+## Project Highlights
+
+- **Backend:** Rails framework
+- **Frontend:** Simple CSS.
+- **Database:** MySQL
+- **Deployment:** Deployed on Render.
