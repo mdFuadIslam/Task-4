@@ -6,13 +6,13 @@ Welcome to Task-4, a user management system.
 
 [https://youtu.be/5NW5ZNz_nQA]
 
-Wait 5 minutes after clicking the link.
-
 ## Live Deployment
 
 The project is deployed on Render. You can access the live site at:
 
 [https://task-4-jcel.onrender.com]
+
+Wait 5 minutes after clicking the link.
 
 ## Key Features
 
